@@ -1,0 +1,41 @@
+<header>
+    <div class="row m-0 pt-3">
+        <div class="col-10">
+            <div class="d-flex">
+                <span class="material-icons pr-3">
+                    menu
+                </span>
+                <h3 [routerLink]="['/home']">Talent Test</h3>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="d-flex">
+                <p class="pr-3">
+                    <mat-icon matBadge="2" matBadgeColor="warn">
+                        notifications
+                    </mat-icon>
+                </p>
+                <div class="btn-grouup" dropdown *ngFor="let item of details">
+                    <button id="button-basic" dropdownToggle type="button" class="btn btn1 dropdown-toggle"
+                        aria-controls="dropdown-basic"><span class="material-icons person">
+                            person
+                        </span>
+                        <span>{{item.user_name}}</span><span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/departmentlist']">Departments</a>
+                        </li>
+                        <li class="divider dropdown-divider"></li>
+                        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Userlist']">User
+                                Menus
+                            </a>
+                        <li class="divider dropdown-divider"></li>
+                        <li role="menuitem"><a class="dropdown-item" (click)="logout()">Log Out</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

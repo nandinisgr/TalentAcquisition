@@ -1,0 +1,82 @@
+
+.login--wrapper {
+	width: 100%;
+	height: calc(100vh - 50px);
+	display: flex;
+	align-items: center;
+
+	.login--div {
+        border-color: #28527A;
+		background-color: white;
+        width: 450px;
+        
+		margin: auto;
+        box-shadow: 0 2px 20px #28527A;
+    }
+    .title{
+        text-align: center;
+        font-size: 25px;
+        padding-top: 10px;
+    }
+    button{
+        background-color: #28527A;
+        color: white;
+        margin-left: 40%;;
+    }
+    
+}
+mat-form-field{
+    width: 80%;
+}
+
+.login--or{
+    display: block;
+			margin: 25px auto 0px;
+
+			 span {
+			
+				font-size:15px;
+
+				&:before,
+				&:after {
+					content: '';
+					display: inline-block;
+					height: 1px;
+					background-color: #28527A;
+					width: 32%;
+					margin: 3px 35px;
+				}
+			}
+    p {
+        margin-top: 10px;
+        color: black;
+        text-align: center;
+        font-size: 20px;
+        a {
+            color:#28527A;
+           
+        }
+    }
+}
+::ng-deep .custom-style{
+    background-color:#1ebb23b6;
+    color:white;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    button{
+        color: white;
+        font-size: 18px;
+    }
+  }
+  ::ng-deep .custom{
+    background-color:#E53935;
+    color:white;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    button{
+        color: white;
+        font-size: 18px;
+    }
+  }

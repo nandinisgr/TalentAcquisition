@@ -1,0 +1,41 @@
+
+        <mat-card class="card">
+            <h4 class="hh">Creation Of Department </h4>
+            <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+                <mat-icon class="close-icon" color="warn">close</mat-icon>
+            </button>
+            <form [formGroup]="departmentForm" (ngSubmit)="onDepartmentFormSubmit(departmentForm.value)"
+                #DepartmentupForm="ngForm">
+                <div class="row m-0">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 p-0">
+                        <h3 class="inpt-field ml-4 m-0">Department Name</h3>
+                        <mat-form-field class="formfield" appearance="outline">
+                            <mat-select formControlName="department_name" placeholder="Department Name">
+                                <mat-option *ngFor="let dept of departmentname" value={{dept}}>{{dept}}</mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="departmentForm.get('department_name').hasError('required') && DepartmentupForm.submitted">
+                                Department Name is
+                                required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 p-0">
+                        <h3 class="inpt-field ml-4 m-0">Roles</h3>
+                        <mat-form-field class="formfield" appearance="outline">
+                            <mat-select formControlName="roles" placeholder="Roles">
+                                <mat-option *ngFor="let type of rolestype" value={{type}}>{{type}}</mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="departmentForm.get('roles').hasError('required') && DepartmentupForm.submitted">
+                                Role is
+                                required</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <button mat-raised-button class="btnn mr-3" (click)="clear()">Clear</button>
+                    <button mat-raised-button *ngIf="save_update" class="btnn">Save</button>
+                </div>
+            </form>
+        </mat-card>

@@ -1,0 +1,56 @@
+<div class="login--wrapper">
+  <div class="login--div">
+
+    <div>
+      <div class="title">
+        <h1>Sign Up</h1>
+      </div>
+      <form [formGroup]="RegisterForm" (ngSubmit)="registersubmit(RegisterForm.value)" #SignupForm="ngForm">
+        <div class="pl-3">
+          <div class="pl-3">
+            <p class="m-0">User Name</p>
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="user_name" placeholder="User Name">
+              <mat-error *ngIf="RegisterForm.get('user_name').hasError('required') && SignupForm.submitted">User Name is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="pl-3">
+            <label>Email</label>
+            <input type="text" formControlName="email_id" class="form-control emailwidth" />
+            <div *ngIf="f.email_id.touched && f.email_id.invalid" class="alert alert-danger">
+              <div *ngIf="f.email_id.errors.required">Email Id is required.</div>
+              <div *ngIf="f.email_id.errors.pattern">Please, Email must be a valid email address</div>
+            </div>
+          </div>
+          <!-- <div class="pl-3">
+            <label for="mobile_num">Mobile Number</label>
+            <input formControlName="mobile_num" id="mobile_num" type="text" class="form-control emailwidth">
+            <div *ngIf="f.mobile_num.touched && f.mobile_num.invalid" class="alert alert-danger">
+              <div *ngIf="f.mobile_num.errors.required">Mobile Number is required.</div>
+              <div *ngIf="f.mobile_num.errors.pattern">Please, Enter 10 digit Mobile Number.</div>
+            </div>
+          </div> -->
+          <div class="pl-3">
+            <p class="m-0">Password</p>
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="password" placeholder="Pasword" type="password">
+              <mat-error *ngIf="RegisterForm.get('password').hasError('required') && SignupForm.submitted">Password is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <button mat-button>Sign Up</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="login--or">
+      <span>Or</span>
+      <p><a target="_self" title="Signup" [routerLink]="['/login']" alt="Signup">Click here</a> if you have an
+        account</p>
+    </div>
+
+  </div>
+</div>

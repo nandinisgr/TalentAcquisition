@@ -1,0 +1,113 @@
+
+
+.icn{
+    font-size: 18px;
+}
+
+.bg{
+    background-color: white;
+    width: 13%;
+    margin: auto;
+}
+
+.content{
+    padding-top: 70px;
+    background-color: whitesmoke;
+}
+
+
+.mat-form-field {
+    width: 30%;
+    padding-left: 25px;
+    input.mat-input-element{
+        font-size: 13px;
+       
+    }
+  }
+  .button{
+    background-color:#4265ed;
+    color: white;
+    margin-left: 20px;
+  }
+  
+  table {
+    width: 80%;
+    margin: 15px 15px;
+    background-color: whitesmoke;
+  }
+  .card-data{
+      border: 1px solid white;
+      border-radius: 4px;
+    background-color: white;
+      width: 85%;
+      margin:auto;
+      margin-top: 40px;
+  }
+  .report{
+      padding-left: 15px;
+      padding-top: 15px;
+      text-align: center;
+      
+  }
+  .btn-fodder{
+    background-color:#4265ed;
+    color: white;
+    margin-left: 6px;
+  }
+  .buttondata{
+    background-color:#4265ed;
+    color: white;
+    margin-left: 5px;
+    }
+  .buttondata:disabled{
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  table {
+    overflow: scroll;
+  
+  }
+  
+  .table-container {
+    overflow:scroll;
+  }
+
+  @media screen and (max-width: 500px){
+    .card-data{
+      border: 1px solid white;
+      border-radius: 4px;
+    background-color: white;
+      width: 80%;
+      margin:auto;
+      margin-top: 40px;
+  }
+    .btn-animal{
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .mat-form-field {
+      width: 50%;
+      padding-left: 25px;
+      // margin-top: 10px;
+      input.mat-input-element{
+          font-size: 13px;
+         
+      }
+    } 
+    th,td{
+      font-size: 12px;
+    }
+    }
+    table {
+      overflow: scroll;
+    
+    }
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    .table-container {
+      overflow: scroll;
+      display: grid;
+    }
+  

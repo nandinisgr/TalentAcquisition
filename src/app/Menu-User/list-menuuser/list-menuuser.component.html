@@ -1,0 +1,67 @@
+<app-header></app-header>
+<div class="content">
+    <div class="pb-4">
+        <h2 class="text-center pt-3 pb-2">User Details</h2>
+        <div class="card-data">
+            <div class="table-container">
+                <div class="row m-0">
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-9 p-0">
+                        <mat-form-field>
+                            <input matInput (keyup)="applyFilter($event.target.value)"
+                                placeholder="Search By User Name">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-2 p-0 mt-1">
+                        <!-- <button mat-button class="btn-fodder" [routerLink]="['/adddUser']">Add User</button> -->
+                        <button mat-button class="btn-fodder" (click)="userpage()">Add User</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+                    <ng-container matColumnDef="User Number">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>User Number</th>
+                        <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="User Name">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>User Name</th>
+                        <td mat-cell *matCellDef="let element"> {{element.user_name}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Department Name">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Department Name</th>
+                        <td mat-cell *matCellDef="let element"><button mat-raised-button class="btnndept"
+                                [routerLink]="['/departmentlist']">{{element.department_name}} </button> </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Email ID">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email ID</th>
+                        <td mat-cell *matCellDef="let element"> {{element.email_id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Address">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+                        <td mat-cell *matCellDef="let element"> {{element.address.substring(0,11)}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Actions">
+                        <th mat-header-cell *matHeaderCellDef> Actions </th>
+                        <td mat-cell *matCellDef="let element">
+
+                            <button mat-button (click)="edit(element);" matTooltip="edit">
+                                <i class="material-icons">
+                                    edit
+                                </i>
+                            </button>
+                            <button mat-button (click)="delete(element,'delete');" matTooltip="delete">
+                                <i class="material-icons">
+                                    delete
+                                </i>
+                            </button>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+    </div>

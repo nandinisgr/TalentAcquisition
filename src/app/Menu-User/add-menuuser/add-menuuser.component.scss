@@ -1,0 +1,131 @@
+
+.content{
+    padding-top: 80px;
+    background-color: whitesmoke;
+}
+.card{
+    padding: 15px;
+    width: 100%;
+    margin: auto;
+}
+
+::ng-deep .custom-style{
+    background-color:#1ebb23b6;
+    color:white;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    button{
+        color: white;
+        font-size: 18px;
+    }
+  }
+  ::ng-deep .custom{
+    background-color:#E53935;
+    color:white;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    button{
+        color: white;
+        font-size: 18px;
+    }
+  }
+
+.mat-form-field {
+    width: 80%;
+    padding-left: 25px;
+    input.mat-input-element{
+        font-size: 13px;
+    }
+}
+.btnn{
+    background-color: rgb(98, 98, 240);
+    color: white;
+    width: 17%;
+    font-size: 18px;
+}       
+@media screen and (max-width: 580px){
+    .mat-form-field {
+        width: 80%;
+        padding-left: 25px;
+        input.mat-input-element{
+            font-size: 12px;
+        }
+    }
+    .inpt-field{
+        font-size: 15px !important;
+        color: gray;
+    }
+    .hh{
+        font-size: 17px;
+    }
+    .btnn{
+
+        font-size: 16px;
+    }    
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 4px;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex{
+    padding: 3px !important;
+    }
+    .inpt-field{
+        font-size: 17px;
+        color: gray;
+    }
+    .input{
+        width: 80%;
+        color: gray;
+    }
+.hh{
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+.button{
+    background-color:#4265ed;
+    color: white;
+    margin-left: 170px;
+  
+ }
+
+ 
+ input[type=number]::-webkit-inner-spin-button, 
+ input[type=number]::-webkit-outer-spin-button { 
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     margin: 0; 
+ }
+ .close-button{
+    float: right;
+    top:-24px;
+    right:-24px;
+  }
+  
+  .close-icon {
+    transition: 1s ease-in-out;
+    margin-right: 20px;
+  }
+  
+  .close-icon:hover {
+    transform: rotate(180deg);
+   
+  }
+  
+  ::ng-deep .icon-outside .close-button{
+    float: right;
+    top:-52px;
+    right:-52px;
+  }
+  
+  ::ng-deep .icon-outside .mat-dialog-container {
+   overflow: unset
+  }
+  .quantity{
+    width: 251px;
+    margin-left: 10px;
+  }

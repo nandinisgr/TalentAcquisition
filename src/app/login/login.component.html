@@ -1,0 +1,45 @@
+<div class="login--wrapper">
+  <div class="login--div">
+    <form [formGroup]="LoginForm" (ngSubmit)="loginsubmit(LoginForm.value)" #loginUpForm="ngForm">
+      <div>
+
+        <div class="title">
+          <h1>Sign In</h1>
+        </div>
+
+        <div class="pl-3">
+          <div class="pl-3">
+            <p class="m-0">Email Id</p>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Email Id" formControlName="email_id" type="text">
+              <mat-error *ngIf="LoginForm.get('email_id').hasError('required') && loginUpForm.submitted">
+                Email Id is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="pl-3">
+            <p class="m-0">Password</p>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Password" formControlName="password" type="password">
+              <mat-error *ngIf="LoginForm.get('password').hasError('required') && loginUpForm.submitted">
+                Password is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div>
+
+          <button mat-button>Sign In</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="login--or">
+      <span>Or</span>
+      <p><a target="_self" title="Signin" [routerLink]="['/register']" alt="Signup">Click here</a> if you have an
+        account</p>
+    </div>
+
+  </div>
+</div>

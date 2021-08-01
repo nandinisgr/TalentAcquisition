@@ -1,0 +1,70 @@
+<header>
+    <div class="row m-0 pt-3">
+        <div class="col-10">
+            <div class="d-flex">
+                <span class="material-icons pr-3">
+                    menu
+                </span>
+                <h3>Talent Test</h3>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="d-flex">
+                <p class="pr-3">
+                    <mat-icon matBadge="2" matBadgeColor="warn">
+                        notifications
+                    </mat-icon>
+                </p>
+                <div class="btn-grouup" dropdown *ngFor="let item of details">
+                    <button id="button-basic" dropdownToggle type="button" class="btn btn1 dropdown-toggle"
+                        aria-controls="dropdown-basic"><span class="material-icons person">
+                            person
+                        </span>
+                        <!-- {{details|json}} -->
+                        <span>{{item.user_name}} </span><span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu"
+                        aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/departmentlist']">Departments</a>
+                        </li>
+                        <li class="divider dropdown-divider"></li>
+                        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Userlist']">User Menus</a></li>
+                        <li class="divider dropdown-divider"></li>
+                        <li role="menuitem"><a class="dropdown-item" (click)="logout()">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="content">
+    <div class="pb-4">
+        <div class="row g">
+
+            <div class="col-lg-4  col-sm-6 col-md-6 col-6 mt-2">
+                <mat-card [routerLink]="['/departmentlist']" class="bg">
+                    <div class="text-center mt-2  mb-2 ggg">
+                        <img src="./assets/images/dept.png">
+                    </div>
+                    <div class="text-center fs">
+                        <h3>Departments<span>({{departmentCountLength}})</span></h3>
+                    </div>
+                    <div><button mat-raised-button  class="btnn">Click</button></div>
+                    
+                </mat-card>
+            </div>
+
+            <div class="col-lg-4  col-sm-6 col-md-6 col-6 mt-2">
+                <mat-card class="bg" [routerLink]="['/Userlist']">
+                    <div class="text-center mt-2  mb-2 ggg">
+                        <img src="./assets/images/download2.png">
+                    </div>
+                    <div class="text-center fs">
+                        <h3>User Menu<span>({{UserCountLength}})</span></h3>
+                        <div><button mat-raised-button  class="userbtnn">Click</button></div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
